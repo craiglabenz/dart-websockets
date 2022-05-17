@@ -23,7 +23,7 @@ Future<void> main(List<String> arguments) async {
   if (results['message'] != null) {
     final msg = '${results["channel"]} :: ${results["message"]}';
     stdout.writeln("[sending] $msg");
-    await channel.sink.add(msg);
+    channel.sink.add(msg);
     channel.sink.close();
   } else {
     stdout.writeln('Listening on $url/${results["channel"]}');
